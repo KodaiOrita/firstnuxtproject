@@ -1,5 +1,5 @@
 const pkg = require('./package')
-
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'spa',
@@ -40,6 +40,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/dotenv'
   ],
 
   /*
@@ -51,6 +52,14 @@ module.exports = {
     */
     extend(config, ctx) {
       
-    }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        '_':'lodash'
+      })
+    ]
+  },
+  generate: {
+    dir: 'public'
   }
 }
