@@ -15,7 +15,7 @@
                     </span>
                     <button v-on:click="remove(todo.id)">X</button>
                 </span>
-                test
+                test2
             </li>
         </ul>
         <div class="form">
